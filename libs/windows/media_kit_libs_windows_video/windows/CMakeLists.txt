@@ -4,7 +4,7 @@
 # All rights reserved.
 # Use of this source code is governed by MIT license that can be found in the LICENSE file.
 
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.26)
 # cmake_policy(SET CMP0175 NEW)
 
 # This option is read by the other packages which are part of package:media_kit.
@@ -67,16 +67,16 @@ endfunction()
 # Detect architecture and set appropriate libmpv archive
 if(${FLUTTER_TARGET_PLATFORM} STREQUAL "windows-x64")
   set(LIBMPV_ARCH "x86_64")
-  set(LIBMPV "mpv-dev-x86_64-20241021-git-0f78584.7z")
-  set(LIBMPV_MD5 "6ecf18e85b093c3f7edb16f3ee6603f3")
+  set(LIBMPV "mpv-dev-x86_64-20260925-git-a0fba7b.7z")      # your x86_64 file name
+  set(LIBMPV_MD5 "522e719a88ae3a001fcf7c5bda35cb8e")
 else()
   set(LIBMPV_ARCH "aarch64")
-  set(LIBMPV "mpv-dev-aarch64-20241021-git-0f78584.7z")
-  set(LIBMPV_MD5 "5b507a35db13eee6cb7eb21e8be7c83d")
+  set(LIBMPV "mpv-dev-aarch64-20260925-git-a0fba7b.7z")     # your aarch64 file name
+  set(LIBMPV_MD5 "2d2722e2f425e794a381b0bdf63cb99a")
 endif()
 
-# Download URL for the libmpv archive from the latest release
-set(LIBMPV_URL "https://github.com/media-kit/libmpv-win32-video-cmake/releases/download/20241021/${LIBMPV}")
+# Download URL for the libmpv archive from the Classiolabs release
+set(LIBMPV_URL "https://github.com/Classiolabs/libmpv-win32-video-cmake/releases/download/20260925-25/${LIBMPV}")  # your TAG
 
 # Download location of the libmpv archive.
 set(LIBMPV_ARCHIVE "${CMAKE_BINARY_DIR}/${LIBMPV}")
